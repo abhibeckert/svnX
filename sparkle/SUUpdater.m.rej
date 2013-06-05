@@ -1,0 +1,17 @@
+***************
+*** 120,125 ****
+  		// If either one is still unspecified, ask the user what they think.
+  		if (nil == shouldCheckAtStartup)
+  			[self showUserChoicePanel];
+  	}
+  }
+  
+--- 120,127 ----
+  		// If either one is still unspecified, ask the user what they think.
+  		if (nil == shouldCheckAtStartup)
+  			[self showUserChoicePanel];
++ 		else if ([shouldCheckAtStartup boolValue])
++ 			[self checkForUpdatesInBackground];
+  	}
+  }
+  
